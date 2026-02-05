@@ -1,0 +1,9 @@
+alert tcp any any -> any any (
+  msg:"Cross-Site Scripting (XSS) Attempt Detected";
+  flow:to_server,established;
+  content:"<script>";
+  nocase;
+  classtype:web-application-attack;
+  sid:1000007;
+  rev:1;
+)
