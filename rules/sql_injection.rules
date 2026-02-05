@@ -1,0 +1,51 @@
+alert tcp any any -> any 80 (
+  msg:"Error Based SQL Injection Detected - Single Quote";
+  content:"%27";
+  priority:1;
+  sid:1000011;
+  rev:1;
+)
+
+alert tcp any any -> any 80 (
+  msg:"Error Based SQL Injection Detected - Double Quote";
+  content:"%22";
+  priority:1;
+  sid:1000012;
+  rev:1;
+)
+
+alert tcp any any -> any 80 (
+  msg:"AND SQL Injection Detected";
+  content:"and";
+  nocase;
+  priority:2;
+  sid:1000013;
+  rev:1;
+)
+
+alert tcp any any -> any 80 (
+  msg:"OR SQL Injection Detected";
+  content:"or";
+  nocase;
+  priority:2;
+  sid:1000014;
+  rev:1;
+)
+
+alert tcp any any -> any 80 (
+  msg:"ORDER BY SQL Injection Detected";
+  content:"order";
+  nocase;
+  priority:5;
+  sid:1000015;
+  rev:1;
+)
+
+alert tcp any any -> any 80 (
+  msg:"UNION SELECT SQL Injection Detected";
+  content:"union";
+  nocase;
+  priority:5;
+  sid:1000016;
+  rev:1;
+)
