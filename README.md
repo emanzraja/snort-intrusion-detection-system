@@ -46,6 +46,18 @@ Some false positives were observed, highlighting the importance of fine-tuning I
 
 ## Report
 A detailed project report with screenshots and analysis is available in:
+## Snort Rules Structure
+All custom Snort rules are stored in the `rules/` directory and are categorized by attack type:
+
+- `ddos.rules`
+- `sql_injection.rules`
+- `port_scan.rules`
+- `mitm_arp.rules`
+- `brute_force.rules`
+- `icmp.rules`
+- `xss.rules`
+
+Each rule was written, tested, and validated through live attack simulations.
 
 ## Authors
 - Umar Niazi  
