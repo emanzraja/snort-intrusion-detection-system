@@ -1,0 +1,6 @@
+alert icmp any any -> any any (
+  msg:"ICMP Large Packet Attack Detected";
+  dsize:>1000;
+  sid:1000006;
+  rev:1;
+)
