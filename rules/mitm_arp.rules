@@ -1,0 +1,6 @@
+alert arp any any -> any any (
+  msg:"ARP Spoofing / MITM Attack Detected";
+  sid:1000004;
+  rev:1;
+  classtype:bad-unknown;
+)
